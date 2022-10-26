@@ -1,7 +1,7 @@
 {
-  "name": "@realtby/codestyle",
+  "name": "@wirby/codestyle",
   "version": "0.1.20",
-  "description": "realt.by frontend codestyle tools shared configs",
+  "description": "wir.by codestyle tools shared configs",
   "main": ".release-it.js",
   "publishConfig": {
     "access": "public"
@@ -11,46 +11,45 @@
     "release": "HUSKY=0 release-it",
     "pre-release": "HUSKY=0 release-it --no-git",
     "format": "prettier --write .",
-    "npmrc:local": "LOCAL=true bash bin/create-npmrc.sh",
-    "npmrc:public": "bash bin/create-npmrc.sh",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix --cache"
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix --cache",
+    "commit": "git-cz",
+    "changelog": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
-    "@commitlint/cli": "14.1.0",
-    "@commitlint/config-conventional": "13.2.0",
-    "@graphql-eslint/eslint-plugin": "2.2.0",
-    "@release-it/bumper": "3.0.1",
-    "@typescript-eslint/eslint-plugin": "5.0.0",
-    "@typescript-eslint/parser": "5.0.0",
-    "auto-changelog": "2.3.0",
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "@release-it/bumper": "4.0.0",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "auto-changelog": "^2.4.0",
     "babel-eslint": "10.1.0",
-    "commitlint-plugin-function-rules": "1.4.0",
-    "eslint": "7.32.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-config-react-app": "6.0.0",
-    "eslint-import-resolver-typescript": "2.5.0",
-    "eslint-plugin-flowtype": "6.1.0",
-    "eslint-plugin-import": "2.25.1",
-    "eslint-plugin-jest": "24.7.0",
-    "eslint-plugin-json": "2.1.2",
-    "eslint-plugin-jsx-a11y": "6.4.1",
+    "commitlint-plugin-function-rules": "1.7.1",
+    "eslint": "8.26.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-import-resolver-typescript": "3.5.2",
+    "eslint-plugin-flowtype": "8.0.3",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "27.1.3",
+    "eslint-plugin-json": "3.1.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.26.1",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "eslint-plugin-testing-library": "4.12.4",
-    "eslint-plugin-unicorn": "37.0.1",
-    "git-cz": "4.7.6",
-    "husky": "7.0.4",
-    "lint-staged": "11.2.3",
-    "prettier": "2.4.1",
-    "prettier-eslint": "13.0.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.31.10",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-testing-library": "5.9.1",
+    "eslint-plugin-unicorn": "44.0.2",
+    "git-cz": "4.9.0",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.3",
+    "prettier": "2.7.1",
+    "prettier-eslint": "15.0.1",
     "prettier-plugin-tailwind-css": "1.5.0",
-    "release-it": "14.11.6"
+    "release-it": "15.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realtby/codestyle.git"
+    "url": "git+https://github.com/babajka/codestyle.git"
   },
   "keywords": [
     "codestyle",
@@ -60,8 +59,8 @@
   ],
   "author": "Ivan Pazhitnykh <ivan.pazhitnykh@gmail.com> (https://github.com/Drapegnik)",
   "license": "MIT",
-  "homepage": "https://github.com/realtby/codestyle#readme",
+  "homepage": "https://github.com/babajka/codestyle#readme",
   "bugs": {
-    "url": "https://github.com/realtby/codestyle/issues"
+    "url": "https://github.com/babajka/codestyle/issues"
   }
 }

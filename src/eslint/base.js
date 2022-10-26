@@ -1,9 +1,8 @@
 module.exports = {
   extends: [
     'eslint:recommended',
-    // json@3 requires npm@7
     'plugin:json/recommended-with-comments',
-    'plugin:jest/all',
+    // 'plugin:jest/all',
     'plugin:unicorn/recommended',
   ],
   plugins: ['jest', 'unicorn'],

@@ -17,9 +17,7 @@ dist:
 
 	cp package.json dist
 	cp README.md dist
-	cp .npmrc dist
 	cp -r src/* dist
-	cp -r patches dist
 	cp -r .husky dist
 	cp -r bin dist
 

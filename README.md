@@ -1,15 +1,15 @@
-# [@realtby/codestyle](https://www.npmjs.com/package/@realtby/codestyle)
+# [@wirby/codestyle](https://www.npmjs.com/package/@wirby/codestyle)
 
-realt.by frontend codestyle tools shared configs
+wir.by codestyle tools shared configs
 
-[![npm](https://img.shields.io/npm/v/@realtby/codestyle)](https://www.npmjs.com/package/@realtby/codestyle)
+[![npm](https://img.shields.io/npm/v/@wirby/codestyle)](https://www.npmjs.com/package/@wirby/codestyle)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Install
 
 ```bash
-npm i -D @realtby/codestyle
+npm i -D @wirby/codestyle
 ```
 
 ## Development
@@ -18,32 +18,6 @@ npm i -D @realtby/codestyle
 make release # to push new version & generate changelog
 make prerelease # only push new version to npm, for testing
 ```
-
-## How to test publish
-
-In order to locally test the current package with
-the project infrastructure, you can use
-npm proxy register [Verdaccio](https://verdaccio.org/)
-
-Locally, the easiest way to run it through Docker is to run
-the following command:
-
-```bash
-$ docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
-```
-
-To check that everything is working,
-go to the web ui url in browser:
-http://localhost:4873
-
-In order to publish and pull the package from the Proxy repository,
-you need to add the following code to `.npmrc`
-
-```text
-registry=http://localhost:4873
-```
-
-Now you can safely pull and publish to the local npm register!
 
 ## [EditorConfig](https://editorconfig.org)
 
@@ -78,7 +52,7 @@ If you use Visual Studio Code, install [EditorConfig plugin](https://marketplace
 1. Create configuration file `.prettierrc.js` at the root of the project. Insert the following content:
 
 ```js
-const config = require('@realtby/codestyle/prettier');
+const config = require('@wirby/codestyle/prettier');
 module.exports = config;
 ```
 
@@ -141,26 +115,12 @@ module.exports = {
   root: true,
   extends: [
     // choose and enable needed configs
-    './node_modules/@realtby/codestyle/eslint/prettier', // prettier first!
-    './node_modules/@realtby/codestyle/eslint/base',
-    './node_modules/@realtby/codestyle/eslint/typescript',
-    './node_modules/@realtby/codestyle/eslint/import',
-    // './node_modules/@realtby/codestyle/eslint/react',
-    // './node_modules/@realtby/codestyle/eslint/node',
-    // './node_modules/@realtby/codestyle/eslint/graphql',
-  ],
-  overrides: [
-    {
-      files: ['*.gql'],
-      parserOptions: {
-        // add schema & operations paths
-        // for client
-        schema: 'http://api.realt.loc:8000/graphql',
-        operations: ['./src/**/*.graphql'],
-        // for server
-        schema: './src/**/*.gql',
-      },
-    },
+    './node_modules/@wirby/codestyle/eslint/prettier', // prettier first!
+    './node_modules/@wirby/codestyle/eslint/base',
+    './node_modules/@wirby/codestyle/eslint/typescript',
+    './node_modules/@wirby/codestyle/eslint/import',
+    // './node_modules/@wirby/codestyle/eslint/react',
+    // './node_modules/@wirby/codestyle/eslint/node',
   ],
 };
 ```
@@ -220,12 +180,12 @@ npm i -g commitizen git-cz
 2. add `changelog.config.js` and insert following:
 
 ```js
-const getChangelogConfig = require('@realtby/codestyle/changelog.config');
+const getChangelogConfig = require('@wirby/codestyle/changelog.config');
 
 module.exports = getChangelogConfig({
   scopes: [
     /* additional scopes */
-    'graphql',
+    'auth',
   ],
   types: {
     /* additional types */
@@ -237,7 +197,7 @@ module.exports = getChangelogConfig({
 3. add `commitlint.config.js` and insert following:
 
 ```js
-const getCommitlintConfig = require('@realtby/codestyle/commitlint.config');
+const getCommitlintConfig = require('@wirby/codestyle/commitlint.config');
 
 const czConfig = require('./changelog.config');
 
@@ -247,28 +207,10 @@ module.exports = getCommitlintConfig(czConfig);
 4. add `.release-it.js`:
 
 ```js
-module.exports = require('@realtby/codestyle/release-it');
+module.exports = require('@wirby/codestyle/release-it');
 ```
 
-5. add `.auto-changelog`:
-
-```json
-{
-  "output": "CHANGELOG.md",
-  "template": "./node_modules/@realtby/codestyle/changelog-template.hbs",
-  "unreleased": false,
-  "commitLimit": false,
-  "sort-commits": "date",
-  "issueUrl": "https://realtby.atlassian.net/browse/{id}",
-  "issuePattern": "REALT-\\d+",
-  ".": "https://regex101.com/r/HEBTvr/5",
-  "replaceText": {
-    "(^[^\n]+)(?:\n)?(?:[^!]+)?(!\\d+)?": "$1 $2"
-  }
-}
-```
-
-6. Add following lines to your `package.json`:
+5. Add following lines to your `package.json`:
 
 ```json
 {
@@ -280,9 +222,7 @@ module.exports = require('@realtby/codestyle/release-it');
 }
 ```
 
-7. `npm i -D auto-changelog` + add patch from [`codestyle/patches`](https://github.com/realtby/codestyle/tree/main/patches)
-
-8. add badges to `README.md`
+6. add badges to `README.md`
 
 ```md
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -303,7 +243,7 @@ module.exports = {
 
 2. add `.husky` folder to `.gitignore`
 
-3. run `husky install` in your project root
+3. run `npx husky install` in your project root
 
 You can extend current husky hooks, by adding scripts in you package.json:
 
