@@ -1,7 +1,7 @@
 module.exports = {
   npm: {
     publish: true,
-    publishPath: 'dist',
+    publishPath: './dist/',
   },
   'only-version': true,
   plugins: {
