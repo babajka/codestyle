@@ -126,7 +126,8 @@ module.exports = {
 };
 ```
 
-WARNING: run: `npm run -S eslint-config-next` - to sync it with your next version
+- **WARNING**: run: `npm run -S eslint-config-next` - to sync it with your next version
+- **HINT**: use `npx eslint --print-config .eslint.js > eslint-final.json` to review resolved configuration
 
 2. Add following lines to your `package.json`:
 
