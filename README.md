@@ -119,6 +119,7 @@ module.exports = {
     './node_modules/@wirby/codestyle/eslint/base',
     './node_modules/@wirby/codestyle/eslint/typescript',
     './node_modules/@wirby/codestyle/eslint/import',
+    // './node_modules/@wirby/codestyle/eslint/next',
     // './node_modules/@wirby/codestyle/eslint/react',
     // './node_modules/@wirby/codestyle/eslint/node',
   ],
