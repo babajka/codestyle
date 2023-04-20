@@ -126,6 +126,8 @@ module.exports = {
 };
 ```
 
+WARNING: run: `npm run -S eslint-config-next` - to sync it with your next version
+
 2. Add following lines to your `package.json`:
 
 ```json
